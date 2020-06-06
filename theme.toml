@@ -1,0 +1,27 @@
+name = "zstory"
+description = "A theme based on on Story by HTML5 UP"
+license = "CCA 4.0 license"
+homepage = "https://github.com/davidedelpapa/zstory"
+min_version = "0.1.0"
+demo = ""
+
+[author]
+name = "Davide Del Papa"
+homepage = "https://github.com/davidedelpapa/"
+
+[original]
+author =  "@ajlkn"
+homepage = "http://html5up.net/"
+repo = "https://html5up.net/story"
+
+[extra]
+# if defined, zstory_color_scheme sets a consistent color scheme for the whole site
+zstory_color_scheme = "color5"
+# zstory_gallery_path as rendered in the site
+zstory_gallery_path = "/images/gallery"
+# zstory_gallery_conf where is the datafile for the gallery
+zstory_gallery_conf = "content/gallery.json"
+# zstory_items_conf where is the datafile for the items
+zstory_items_conf = "content/gallery.json"
+# zstory_socials_conf where is the datafile for the socials buttons
+zstory_socials_conf = "content/socials.json"

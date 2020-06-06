@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block title %}zStory{% endblock title %}
+
+{% block content %}
+
+<!-- Banner -->
+{{ zbanner::banner(
+	title="zStory",
+	subtitle="A (modular, highly tweakable) responsive one-page template for Zola (can be done as multi-pages too) based on Story by <a href='https://html5up.net/story'>HTML5 UP</a><br />Browse around and try visiting the <a href='/demo'>demo page</a>",
+	action_label="Get going",
+	action_ref="#third",
+	style_n="2",
+	orientation="right",
+	content_align="left",
+	image_position="right",
+	image_path="images/banner.jpg",
+	fullscreen=true,
+	onload_image="fade-in",
+	onload_content="fade-in",
+	onscroll_image="fade-up",
+	onscroll_content="fade-up",
+	color_scheme="color4",
+	invert_colors=false
+) }}
+
+<!-- First Spotlight -->
+{{ zspotlight::spotlight(
+	id="first",
+	title="Magna etiam feugiat",
+	subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet.",
+	action_label="Learn More",
+	action_ref="#",
+	style_n="1",
+	orientation="right",
+	content_align="left",
+	image_position="center",
+	image_path="images/spotlight01.jpg",
+	onscroll_image="fade-in",
+	invert_colors=true
+) }}
+
+<!-- Second Spotlight -->
+{{ zspotlight::spotlight(
+	id="second",
+	title="Tempus adipiscing",
+	subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet.",
+	action_label="Learn More",
+	style_n="1",
+	orientation="left",
+	content_align="left",
+	image_position="center",
+	image_path="images/spotlight02.jpg",
+	onscroll_image="fade-in"
+) }}
+
+<!-- Third Spotlight: Custom Content Spotlight -->
+{{ zspotlight::spotlight_content(
+	id="third",
+	content="<h2>Pharetra etiam nulla</h2> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet.</p>",
+	style_n="1",
+	orientation="right",
+	content_align="left",
+	image_position="center",
+	image_path="images/spotlight03.jpg",
+	onscroll_image="fade-in",
+	color_scheme="color4"
+) }}
+
+<!-- Gallery -->
+
+{# Simple gallery
+
+{{ zgallery::gallery(
+	title="Massa sed condimentum",
+	subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum.",
+	style_n="1",
+	gallery_style_n="2",
+	thumbs_size="medium",
+	action="Details",
+	lightbox=true,
+	onload_fade=false,
+	onscroll_fade=true
+) }}
+
+#}
+
+{# Content Gallery #}
+
+{{ zgallery::gallery_content(
+	content="",
+	style_n="2",
+	gallery_style_n="2",
+	thumbs_size="medium",
+	action="Details",
+	lightbox=true,
+	onload_fade=false,
+	onscroll_fade=true
+) }}
+
+<!-- Items -->
+
+{# Simple Items #}
+
+{{ zitems::items(
+	title="Ipsum sed consequat",
+	subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum.",
+	style_n="1",
+	align="center",
+	items_style_n="1",
+	icons_style_n="2",
+	items_size="medium",
+	icon_major=true,
+	color_scheme= "1",
+	onload_fade=true,
+	onscroll_fade=true
+) }}
+
+{# Content Items
+
+{{ zitems::items_content(
+	style_n="2",
+	align="center",
+	items_style_n="1",
+	icons_style_n="2",
+	items_size="medium",
+	icon_major=true,
+	data_path="content/items.json",
+	onload_fade=true,
+	onscroll_fade=true
+) }}
+#}
+
+<!-- Socials -->
+
+{# social icons section
+{{ zsocials::social_icons_section(
+	style_n="2",
+	align="center",
+	data_path="content/socials.json",
+	color_scheme="1"
+) }}
+#}
+
+{# Socials inline
+<section class="wrapper style2 align-right">
+    <div class="inner">
+		Contact us at: {{ zsocials::social_icons() }}
+	</div>
+</section>
+#}
+
+<!-- Form (+Socials) Example -->
+
+<section class="wrapper style1 align-center">
+	<div class="inner medium">
+		<h2>Get in touch</h2>
+		{{ zsocials::social_icons(align="right") }}
+
+		<form method="post" action="#">
+			<div class="fields">
+				<div class="field half">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" value="" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email" value="" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+			</div>
+			<ul class="actions special">
+				<li><input type="submit" name="submit" id="submit" value="Send Message" /></li>
+			</ul>
+		</form>
+
+	</div>
+</section>
+
+{% endblock content %}
+
+

@@ -1,0 +1,15 @@
+<footer class="wrapper style1 align-center">
+    <div class="inner">
+        <ul class="icons">
+            {% if  config.extra.zstory_socials_conf %}
+                {% set socials = load_data(path=config.extra.zstory_socials_conf) %}
+            {% else %}
+                {% set socials = load_data(path="content/socials.json") %}
+            {% endif %}
+            {% for social in socials.socials %}
+            <li><a href="{{ social.link }}" class="icon style2 {{ social.icon }}"><span class="label">{{ social.caption }}</span></a></li>
+            {% endfor %}
+        </ul>
+        <p>&copy; Untitled. <a href="https://github.com/davidedelpapa/">Davide Del Papa</a>, Based on Story by <a href="https://html5up.net">html5up</a>.</p>
+    </div>
+</footer>

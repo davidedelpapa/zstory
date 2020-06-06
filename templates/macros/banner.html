@@ -1,0 +1,67 @@
+
+{%
+macro banner(
+	id="",
+	title="",
+	subtitle="",
+	action_label="Get Started",
+	action_ref="#",
+	style_n="1",
+	orientation="left",
+	content_align="left",
+	image_position="right",
+	image_path="",
+	image_alt="",
+	fullscreen=true,
+	onload_image="",
+	onload_content="",
+	onscroll_image="",
+	onscroll_content="",
+	color_scheme="",
+	invert_colors=false,
+	extras="")
+%}
+<section class="banner style{{ style_n }} orient-{{ orientation }} content-align-{{ content_align }} image-position-{{ image_position }} {% if fullscreen %}fullscreen{% endif %} {% if onload_image != ""%}onload-image-{{ onload_image }}{% endif %} {% if onload_content != ""%}onload-content-{{ onload_content }}{% endif %} {% if onscroll_image != ""%}onscroll-image-{{ onscroll_image }}{% endif %} {% if onscroll_content != ""%}onscroll-content-{{ onscroll_content }}{% endif %} {% if color_scheme != ""%}{{ color_scheme }}{% elif config.extra.zstory_color_scheme %}{{ config.extra.zstory_color_scheme }}{% endif %} {% if invert_colors %}invert{% endif %}{% if extras != "" %} {{ extras }}{% endif %}"{% if id != "" %} id="{{ id }}"{% endif %}>
+	<div class="content">
+		<h1>{{ title }}</h1>
+		<p class="major">{{ subtitle | safe }}</p>
+		<ul class="actions stacked">
+			<li><a href="{{ action_ref }}" class="button big wide smooth-scroll-middle">{{ action_label }}</a></li>
+		</ul>
+	</div>
+    {% if image_path != "" %}
+	{{ self::image(image_path=image_path, image_alt=image_alt) }}
+    {% endif %}
+</section>
+{% endmacro banner %}
+
+{%
+macro banner_content(
+	id="",
+	content="",
+	style_n="1",
+	orientation="left",
+	content_align="left",
+	image_position="right",
+	image_path="",
+	image_alt="",
+	fullscreen=true,
+	onload_image="",
+	onload_content="",
+	onscroll_image="",
+	onscroll_content="",
+	color_scheme="",
+	invert_colors=false,
+	extras="")
+%}
+<section class="banner style{{ style_n }} orient-{{ orientation }} content-align-{{ content_align }} image-position-{{ image_position }} {% if fullscreen %}fullscreen{% endif %} {% if onload_image != ""%}onload-image-{{ onload_image }}{% endif %} {% if onload_content != ""%}onload-content-{{ onload_content }}{% endif %} {% if onscroll_image != ""%}onscroll-image-{{ onscroll_image }}{% endif %} {% if onscroll_content != ""%}onscroll-content-{{ onscroll_content }}{% endif %} {% if color_scheme != ""%}{{ color_scheme }}{% elif config.extra.zstory_color_scheme %}{{ config.extra.zstory_color_scheme }}{% endif %} {% if invert_colors %}invert{% endif %}{% if extras != "" %} {{ extras }}{% endif %}"{% if id != "" %} id="{{ id }}"{% endif %}>
+	{% if content !="" %}
+	<div class="content">
+		{{ content | safe }}
+	</div>
+	{% endif %}
+    {% if image_path != "" %}
+	{{ self::image(image_path=image_path, image_alt=image_alt) }}
+    {% endif %}
+</section>
+{% endmacro banner_content %}

@@ -1,0 +1,13 @@
+ {% if color_scheme != ""%}{{ color_scheme }}{% elif config.extra.zstory_color_scheme %}{{ config.extra.zstory_color_scheme }}{% endif %} {% if invert_colors %}invert{% endif %}
+
+{%
+macro image(
+	id="",
+	image_path="",
+	image_alt="",
+	extras="")
+%}
+<div class="image{% if extras != "" %} {{ extras }}{% endif %}"{% if id != "" %} id="{{ id }}"{% endif %}>
+	<img src="{{ image_path }}" alt="{{ image_alt }}" />
+</div>
+{% endmacro image %}

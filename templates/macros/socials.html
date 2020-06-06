@@ -1,0 +1,52 @@
+{%
+macro social_icons_section(
+	id="",
+	style_n="1",
+	align="center",
+	icons_style_n="2",
+	data_path="",
+	color_scheme="",
+	invert_colors=false,
+	extras_wrapper="",
+	extras_icons="")
+%}
+<section class="wrapper style{{ style_n }} align-{{ align }} {% if color_scheme != ""%}{{ color_scheme }}{% elif config.extra.zstory_color_scheme %}{{ config.extra.zstory_color_scheme }}{% endif %} {% if invert_colors %}invert{% endif %}{% if extras_wrapper != "" %} {{ extras_wrapper }}{% endif %}"{% if id != "" %} id="{{ id }}"{% endif %}>
+    <div class="inner">
+        <ul class="icons">
+            {% if data_path != ""%}
+				{% set socials = load_data(path=data_path) %}
+			{% elif  config.extra.zstory_socials_conf %}
+				{% set socials = load_data(path=config.extra.zstory_socials_conf) %}
+			{% else %}
+				{% set socials = load_data(path="content/socials.json") %}
+			{% endif %}
+			{% for social in socials.socials %}
+            <li><a href="{{ social.link }}" class="icon style{{icons_style_n}} {{ social.icon }}{% if extras_icons != "" %} {{ extras_icons }}{% endif %}"><span class="label">{{ social.caption }}</span></a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endmacro social_icons_section %}
+
+{%
+macro social_icons(
+	id="",
+	icons_style_n="1",
+	data_path="",
+	align="",
+	extras="")
+%}
+<ul class="icons{% if align %} align-{{ align }}{% endif %}">
+	{% if data_path != ""%}
+		{% set socials = load_data(path=data_path) %}
+	{% elif  config.extra.zstory_socials_conf %}
+		{% set socials = load_data(path=config.extra.zstory_socials_conf) %}
+	{% else %}
+		{% set socials = load_data(path="content/socials.json") %}
+	{% endif %}
+	{% for social in socials.socials %}
+	<li><a href="{{ social.link }}" class="icon style{{icons_style_n}} {{ social.icon }}{% if extras != "" %} {{ extras }}{% endif %}"><span class="label">{{ social.caption }}</span></a></li>
+	{% endfor %}
+</ul>
+
+{% endmacro social_icons %}

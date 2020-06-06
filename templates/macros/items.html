@@ -1,0 +1,95 @@
+{%
+macro items(
+	id="",
+	title="",
+	subtitle="",
+	style_n="1",
+	align="center",
+	items_style_n="1",
+	icons_style_n="1",
+	items_size="medium",
+	icon_major=false,
+	data_path="content/items.json",
+	onload_fade=true,
+	onscroll_fade=true,
+	color_scheme="",
+	invert_colors=false,
+	extras_wrapper="",
+	extras_items="",
+	extras_icons="")
+%}
+<section class="wrapper style{{ style_n }} align-{{ align }} {% if color_scheme != ""%}{{ color_scheme }}{% elif config.extra.zstory_color_scheme %}{{ config.extra.zstory_color_scheme }}{% endif %} {% if invert_colors %}invert{% endif %}{% if extras_wrapper != "" %} {{ extras_wrapper }}{% endif %}"{% if id != "" %} id="{{ id }}"{% endif %}>
+	<div class="inner">
+		<h2>{{ title }}</h2>
+		<p>{{ subtitle | safe }}</p>
+		<div class="items style{{ items_style_n }} {{ items_size }} {% if onload_fade %}onload-fade-in{% endif %} {% if onscroll_fade %}onscroll-fade-in{% endif %}{% if extras_items != "" %} {{ extras_items }}{% endif %}"{% if id != "" %} id="{{ id }}-items"{% endif %}>
+			{% if data_path != ""%}
+				{% set items = load_data(path=data_path) %}
+			{% elif  config.extra.zstory_items_conf %}
+				{% set items = load_data(path=config.extra.zstory_items_conf) %}
+			{% else %}
+				{% set items = load_data(path="content/items.json") %}
+			{% endif %}
+			{% for item in items.items %}
+			<section>
+				{% if item.icon %}
+				<span class="icon style{{ icons_style_n }} {% if icon_major %}major{% endif %} {{ item.icon }}{% if extras_icons != "" %} {{ extras_icons }}{% endif %}"></span>
+				{% endif %}
+				<h3>{{ item.caption}}</h3>
+				{% if item.description %}
+				<p>{{ item.description | safe }}</p>
+				{% endif %}
+			</section>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+{% endmacro items %}
+
+{%
+macro items_content(
+	id="",
+	content="",
+	style_n="1",
+	align="center",
+	items_style_n="1",
+	icons_style_n="1",
+	items_size="medium",
+	icon_major=false,
+	data_path="content/items.json",
+	onload_fade=true,
+	onscroll_fade=true,
+	color_scheme="",
+	invert_colors=false,
+	extras_wrapper="",
+	extras_items="",
+	extras_icons="")
+%}
+<section class="wrapper style{{ style_n }} align-{{ align }} {% if color_scheme != ""%}{{ color_scheme }}{% elif config.extra.zstory_color_scheme %}{{ config.extra.zstory_color_scheme }}{% endif %} {% if invert_colors %}invert{% endif %}{% if extras_wrapper != "" %} {{ extras_wrapper }}{% endif %}"{% if id != "" %} id="{{ id }}"{% endif %}>
+	<div class="inner">
+		{% if content !="" %}
+		{{ content | safe }}
+		{% endif %}
+		<div class="items style{{ items_style_n }} {{ items_size }} {% if onload_fade %}onload-fade-in{% endif %} {% if onscroll_fade %}onscroll-fade-in{% endif %}{% if extras_items != "" %} {{ extras_items }}{% endif %}"{% if id != "" %} id="{{ id }}-items"{% endif %}>
+			{% if data_path != ""%}
+				{% set items = load_data(path=data_path) %}
+			{% elif  config.extra.zstory_items_conf %}
+				{% set items = load_data(path=config.extra.zstory_items_conf) %}
+			{% else %}
+				{% set items = load_data(path="content/items.json") %}
+			{% endif %}
+			{% for item in items.items %}
+			<section>
+				{% if item.icon %}
+				<span class="icon style{{ icons_style_n }} {% if icon_major %}major{% endif %} {{ item.icon }}{% if extras_icons != "" %} {{ extras_icons }}{% endif %}"></span>
+				{% endif %}
+				<h3>{{ item.caption}}</h3>
+				{% if item.description %}
+				<p>{{ item.description | safe }}</p>
+				{% endif %}
+			</section>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+{% endmacro items_content %}

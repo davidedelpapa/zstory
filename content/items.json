@@ -1,0 +1,75 @@
+{
+    "items": [{
+            "id": 1,
+            "icon": "fa-gem",
+            "caption": "Lorem",
+            "description": "Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices."
+        },
+        {
+            "id": 2,
+            "icon": "solid fa-save",
+            "caption": "Dolor",
+            "description": "Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices."
+        },
+        {
+            "id": 3,
+            "icon": "fa-chart-bar",
+            "caption": "Amet",
+            "description": "Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices."
+        },
+        {
+            "id": 4,
+            "icon": "solid fa-wifi",
+            "caption": "Consectetur",
+            "description": "Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices."
+        },
+        {
+            "id": 5,
+            "icon": "solid fa-cog",
+            "caption": "Magna",
+            "description": "Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices."
+        },
+        {
+            "id": 6,
+            "icon": "fa-paper-plane",
+            "caption": "Elit",
+            "description": "Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices."
+        },
+        {
+            "id": 7,
+            "icon": "solid fa-desktop",
+            "caption": "Etiam",
+            "description": "Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices."
+        },
+        {
+            "id": 8,
+            "icon": "solid fa-sync-alt",
+            "caption": "Ultrices",
+            "description": "Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices."
+        },
+        {
+            "id": 9,
+            "icon": "solid fa-hashtag",
+            "caption": "Lorem",
+            "description": "Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices."
+        },
+        {
+            "id": 10,
+            "icon": "solid fa-bolt",
+            "caption": "Ipsum",
+            "description": "Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices."
+        },
+        {
+            "id": 11,
+            "icon": "fa-envelope",
+            "caption": "Dolor",
+            "description": "Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices."
+        },
+        {
+            "id": 12,
+            "icon": "solid fa-leaf",
+            "caption": "Amet",
+            "description": "Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices."
+        }
+    ]
+}

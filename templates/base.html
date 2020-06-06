@@ -1,0 +1,42 @@
+{% import "macros/basic.html" as zstory %}
+{% import "macros/banner.html" as zbanner %}
+{% import "macros/gallery.html" as zgallery %}
+{% import "macros/items.html" as zitems %}
+{% import "macros/socials.html" as zsocials %}
+{% import "macros/spotlight.html" as zspotlight %}
+
+{#
+	zStory: a Zola theme, based on Story by HTML5 UP
+	html5up.net | @ajlkn | CCA 3.0 license (html5up.net/license)
+#}
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>{% block title %}{% endblock title %}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+		{% block css %}{% endblock css %}
+	</head>
+	<body class="is-preload">
+		<!-- Divided (wrapper) -->
+		<div id="wrapper" class="divided">
+            
+            {% block content %}{% endblock content%}
+
+            {% include "footer.html" %}
+            
+		</div>
+		<!-- Scripts -->
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/js/jquery.scrollex.min.js"></script>
+        <script src="/assets/js/jquery.scrolly.min.js"></script>
+        <script src="/assets/js/browser.min.js"></script>
+        <script src="/assets/js/breakpoints.min.js"></script>
+        <script src="/assets/js/util.js"></script>
+        <script src="/assets/js/main.js"></script>
+		{% block scripts %}{% endblock scripts %}
+	</body>
+</html>

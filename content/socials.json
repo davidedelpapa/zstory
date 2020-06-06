@@ -1,0 +1,33 @@
+{
+    "socials": [{
+            "id": 1,
+            "icon": "brands fa-twitter",
+            "caption": "Twitter",
+            "link": "#"
+        },
+        {
+            "id": 2,
+            "icon": "brands fa-facebook-f",
+            "caption": "Facebook",
+            "link": "#"
+        },
+        {
+            "id": 3,
+            "icon": "brands fa-instagram",
+            "caption": "Instagram",
+            "link": "#"
+        },
+        {
+            "id": 4,
+            "icon": "brands fa-linkedin",
+            "caption": "Linkedin",
+            "link": "#"
+        },
+        {
+            "id": 5,
+            "icon": "fa-envelope",
+            "caption": "Email",
+            "link": "me@email.com"
+        }
+    ]
+}
