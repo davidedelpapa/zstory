@@ -3,7 +3,7 @@ description = "A theme based on on Story by HTML5 UP"
 license = "CCA 4.0 license"
 homepage = "https://github.com/davidedelpapa/zstory"
 min_version = "0.1.0"
-demo = ""
+demo = "https://zstory.netlify.app/"
 
 [author]
 name = "Davide Del Papa"
